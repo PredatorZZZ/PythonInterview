@@ -11,14 +11,14 @@
 Неизменяемые типы: (_int, str, tuple_ и т.д.)
 
 5. Что вернет функция:
-    ```
+    ```python
     def foo():
         return 1, 2
         print(type(foo()))
     ```
 
 6. Решить задачу
-    ```
+    ```python
     def f(sum, l=[]):
         l.append(sum) 
         print(l)
@@ -30,9 +30,10 @@
     f(10) // [10, 10, 10]
     print(l) // [1, 10]
     ```
+    
     `abc` отзеркалить `abcba`
-    ```python
-    lambda s: s + s[-2::-1]
+   ```python
+    func = lambda s: s + s[-2::-1]
     ```
     массив на n элементов вывести самый часто повторяемый элемент
     ```python
@@ -47,7 +48,7 @@
 8. Декораторы
 Что такое функция высшего порядка? (Функция которая принимает в качестве аргумента другую функцию)Для чего нужны? (Выступают в качестве обертки над функцией и выполнением какого-то кода до и после обернутой функции)
 Написать простейший декоратор
-    ```
+    ```python
     def my_dec(func):
         def wrapper():
             print('foo')
@@ -55,7 +56,7 @@
         return wrapper
     ```
     Применяем декоратор
-    ```
+    ```python
     @my_dec
     def test():
         print('bar')
@@ -76,7 +77,7 @@
 
 11. Менеджеры контекста.
     Через contextlib:
-    ```
+    ```python
     from contextlib import contextmanager
      
     @contextmanager
@@ -91,7 +92,8 @@
             f_obj.close()
     ```
     через дандеры:
-    ```
+    
+    ```python
     class DataConn:
         
         def __init__(self, db_name):
@@ -123,7 +125,7 @@
 virtualenv
 
 15. Как получить доступ к protected методам
-    ```
+    ```python
     class A:
         def __some_method(self):
             print('I am some method')
@@ -142,7 +144,7 @@ virtualenv
 
 18. Что такое генератор?
     Генератор - это функция, которая возвращает итератор, каждый раз "запоминает" свое состояние и генерирует по одному элементу за раз. Создается генератор, используя ключевое слово ```yield```. Пример простого генератора:
-    ```
+    ```python
     def simple_generator():
         print("generate")
         yield 1
